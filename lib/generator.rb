@@ -8,6 +8,8 @@ class Generator
   end
 
   def generate
-    [2, 3, 5, 7, 11, 13, 17, 19, 23, 29]
+    (1..29).select do |x| # 29 is 10th one.
+      (1..x).select{ |y| x%y == 0 }.size == 2
+    end
   end
 end
