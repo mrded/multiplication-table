@@ -8,8 +8,18 @@ class Generator
   end
 
   def generate
-    (1..29).select do |x| # 29 is 10th one.
-      (1..x).select{ |y| x%y == 0 }.size == 2
+    i = 1
+    output = []
+
+    until output.length >= @count
+      output << i if is_prime? i
+      i += 1
     end
+
+    output
+  end
+
+  def is_prime?(number)
+    (1..number).select{ |y| number % y == 0 }.size == 2
   end
 end
