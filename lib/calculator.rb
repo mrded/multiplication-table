@@ -2,17 +2,17 @@
 require 'matrix'
 
 class Calculator
-  attr_accessor :prime
+  attr_accessor :primes
 
-  def initialize(prime = [])
-    @prime = prime
+  def initialize(options = {})
+    @primes = options[:primes]
   end
 
   def multiply
-    length = @prime.length
+    length = @primes.length
 
     Matrix.build(length, length) do |row, column|
-      @prime[row] * @prime[column]
+      @primes[row] * @primes[column]
     end
   end
 end

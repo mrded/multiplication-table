@@ -12,7 +12,7 @@ describe Calculator do
       [10, 15, 25, 35],
       [14, 21, 35, 49],
     ]
-    Calculator.new(primes).multiply.should eq matrix
+    Calculator.new(primes: primes).multiply.should eq matrix
   end
 
 end

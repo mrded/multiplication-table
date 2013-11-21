@@ -3,8 +3,8 @@
 class Generator
   attr_accessor :count
 
-  def initialize(count = 10)
-    @count = count
+  def initialize(options = {})
+    @count = options[:count]
   end
 
   def generate
