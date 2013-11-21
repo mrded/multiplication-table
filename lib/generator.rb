@@ -1,22 +1,22 @@
 #encoding UTF-8
 
 class Generator
-  attr_accessor :count
+  attr_accessor :primes
 
   def initialize(options = {})
     @count = options[:count]
+    @primes = []
   end
 
   def generate
     i = 1
-    output = []
 
-    until output.length >= @count
-      output << i if is_prime? i
+    until @primes.length >= @count
+      @primes << i if is_prime? i
       i += 1
     end
 
-    output
+    @primes
   end
 
   def is_prime?(number)

@@ -7,8 +7,6 @@ class String
 end
 
 class Printer
-  attr_accessor :matrix
-
   def initialize(options = {})
     @matrix = options[:matrix]
     @primes = options[:primes]

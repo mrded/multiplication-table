@@ -1,8 +1,9 @@
 #encoding UTF-8
-require 'matrix'
 
 class Calculator
-  attr_accessor :primes
+  require 'matrix'
+
+  attr_accessor :primes, :matrix
 
   def initialize(options = {})
     @primes = options[:primes]
@@ -11,7 +12,7 @@ class Calculator
   def multiply
     length = @primes.length
 
-    Matrix.build(length, length) do |row, column|
+    @matrix = Matrix.build(length, length) do |row, column|
       @primes[row] * @primes[column]
     end
   end
