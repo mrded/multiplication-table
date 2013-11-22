@@ -11,6 +11,7 @@ class Generator
   def generate
     i = 1
 
+    # Fill the array until its length becomes equal to @count.
     until @primes.length >= @count
       @primes << i if is_prime? i
       i += 1
