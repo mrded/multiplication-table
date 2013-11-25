@@ -7,8 +7,8 @@ class MultiplicationTable
 
   attr_accessor :count, :primes, :matrix
 
-  def initialize(count = 10)
-    @count = count
+  def initialize(options = {})
+    @count = options[:count]
     @primes = Generator.new(count: @count).generate
     @matrix = Calculator.new(primes: @primes).multiply
   end
